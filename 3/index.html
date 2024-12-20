@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №14</title>
+</head>
+<body>
+    <h1>Практическая работа №14: Fetch API</h1>
+    
+    <script>
+      
+fetch('https://jsonplaceholder.typicode.com/users/1')
+.then(response => response.json())
+.then(user => {
+  document.body.innerHTML += `
+    <p>Имя: ${user.name}</p>
+    <p>Email: ${user.email}</p>
+    <p>Адрес: ${user.address.city}, ${user.address.street}</p>
+  `;
+})
+.catch(error => console.error('Ошибка:', error));
+  
+    </script>
+</body>
+</html>
